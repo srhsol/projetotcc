@@ -1,2 +1,2 @@
 # Projeto para adoção de animais
-Um sistema para auxiliar os moradores da cidade de Bagé a adotarem animais
+Divulgar e disponibilizar a doação online de animais para a comunidade bageense.
