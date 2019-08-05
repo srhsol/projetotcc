@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author marcelosiedler
  */
-@WebServlet(urlPatterns = {"/admin/produto/UploadWS", "/admin/evento/UploadWS", "/admin/animal/UploadWS", "/admin/genero/UploadWS", "/admin/admin/UploadWS"})
+@WebServlet(urlPatterns = {"/admin/produto/UploadWS", "/admin/evento/UploadWS", "/admin/animal/UploadWS", "/admin/genero/UploadWS", "/admin/admin/UploadWS", "/admin/doacao/UploadWS"})
 public class UploadWS extends HttpServlet {
 
     /**

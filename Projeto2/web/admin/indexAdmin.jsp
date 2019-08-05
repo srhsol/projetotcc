@@ -78,17 +78,7 @@
     </div>
 </div>
 <br>
-<div class="container">
-    <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
-        <div class="col-lg-8 callto-top-left">
-            <h1>Listar gêneros</h1>
-        </div>
-        <div class="col-lg-4 callto-top-right">
-            <a href="../genero/GeneroWS?acao=list" class="primary-btn">Listars</a>
-        </div>							
-    </div>
-</div>
-<br>
+
 
 <br>
 <br>
