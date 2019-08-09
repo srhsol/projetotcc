@@ -40,7 +40,7 @@
             <h1>Cadastrar animal</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="../animal/animal.jsp" class="primary-btn">Cadastrar</a>
+            <a href="../animal/AnimalWS?acao=add" class="primary-btn">Cadastrar</a>
         </div>							
     </div>
 </div>	

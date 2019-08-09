@@ -46,7 +46,7 @@ public class AnimalWS extends HttpServlet {
         switch(String.valueOf(acao)){
             case "add":
                 request.setAttribute("genero", this.listaGenero());
-                pagina = "add.jsp";
+                pagina = "animal.jsp";
                 break;
             case "del":
                 id = request.getParameter("id");
