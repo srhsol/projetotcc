@@ -37,17 +37,9 @@ public class Animal implements Serializable {
     private String endFoto1;
     private String endFoto2;
     private String endFoto3;
-    
-    @ManyToOne
-    private Genero genero;
-    
-    /*
-    @ManyToOne
-    private Idade idade;
-    
-    @ManyToOne
-    private Pet pet;
-    */
+    private String idade;
+    private String genero;
+    private String tipo; //gato ou cachorro
     
 
     public Long getId() {
@@ -98,13 +90,6 @@ public class Animal implements Serializable {
         this.endFoto3 = endFoto3;
     }
     
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
 
 /*
     public Idade getIdade() {
@@ -123,5 +108,29 @@ public class Animal implements Serializable {
         this.pet = pet;
     }
 */
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
 }

@@ -90,7 +90,7 @@ public class EventoWS extends HttpServlet {
                     lista = dao.listar();
                 }
                 //pra onde deve ser redirecionada a página
-                pagina = "index.jsp";
+                pagina = "evento-lista.jsp";
                 //passar a listagem para a página
                 request.setAttribute("lista", lista);
                 break;

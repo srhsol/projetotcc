@@ -51,7 +51,7 @@
             <h1>Cadastrar produto</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="../produto/produto.jsp" class="primary-btn">Cadastrar</a>
+            <a href="../produto/ProdutoWS?acao=add" class="primary-btn">Cadastrar</a>
         </div>							
     </div>
 </div>	
@@ -62,7 +62,7 @@
             <h1>Cadastrar eventos</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="../evento/evento.jsp" class="primary-btn">Cadastrar</a>
+            <a href="../evento/EventoWS?acao=add" class="primary-btn">Cadastrar</a>
         </div>							
     </div>
 </div>
@@ -73,7 +73,7 @@
             <h1>Solicitar doações</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="../doacao/doacao.jsp" class="primary-btn">Solicitar</a>
+            <a href="../doacao/DoacaoWS?acao=add" class="primary-btn">Solicitar</a>
         </div>							
     </div>
 </div>

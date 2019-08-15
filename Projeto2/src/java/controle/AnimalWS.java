@@ -7,7 +7,7 @@ package controle;
 
 import dao.AnimalDAO;
 import dao.AnimalDAO;
-import dao.GeneroDAO;
+import dao.AnimalDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Animal;
 import modelo.Animal;
-import modelo.Genero;
 import util.FormataData;
 
 /**
@@ -45,13 +44,12 @@ public class AnimalWS extends HttpServlet {
         
         switch(String.valueOf(acao)){
             case "add":
-                request.setAttribute("genero", this.listaGenero());
                 pagina = "animal.jsp";
                 break;
             case "del":
                 id = request.getParameter("id");
                 dao = new AnimalDAO();
-                pagina = "index.jsp";
+                pagina = "animal-lista.jsp";
                 obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 Boolean deucerto = dao.excluir(obj);
                 if(deucerto){   
@@ -67,33 +65,29 @@ public class AnimalWS extends HttpServlet {
                 dao = new AnimalDAO();
                 Animal obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 request.setAttribute("obj", obj);
-                request.setAttribute("genero", this.listaGenero());
                 pagina = "edita.jsp";
                 break;
             case "detalhe":
                 dao = new AnimalDAO();
                 Animal animal = dao.buscarPorChavePrimaria(Long.parseLong(request.getParameter("id")));
                 request.setAttribute("obj", animal);
-                request.setAttribute("genero", this.listaGenero());
                 pagina = "detalhe.jsp";
                 break;
-            case "listLivros":
-                request.setAttribute("genero", this.listaGenero()); 
-                try {
-                    if(request.getParameter("genero")!=null){
-                        Genero genero;
-                        GeneroDAO gdao = new GeneroDAO();
-                        genero = gdao.buscarPorChavePrimaria(Long.parseLong(request.getParameter("genero")));
-                        lista = genero.getAnimais();
+            case "list":
+                dao = new AnimalDAO();
+                if (request.getParameter("filtro") != null) {
+                    try {
+                        lista = dao.listar(request.getParameter("filtro"));
+                    } catch (Exception ex) {
+                        Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    else{
-                        lista = this.listaAnimal();
-                    }
-                } catch (Exception ex) {
-                    Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
+                } else {
+                    lista = dao.listar();
                 }
-                request.setAttribute("lista", lista);
-                pagina = "index.jsp";
+                //passar a listagem para a página
+                request.setAttribute("lista", this.listaAnimal());
+                //pra onde deve ser redirecionada a página
+                pagina = "animal-lista.jsp";
                 break;
             default:
                 dao = new AnimalDAO();
@@ -107,7 +101,7 @@ public class AnimalWS extends HttpServlet {
                     lista = this.listaAnimal();
                 }
                 //pra onde deve ser redirecionada a página
-                pagina = "index.jsp";
+                pagina = "animal-lista.jsp";
                 //passar a listagem para a página
                 request.setAttribute("lista", lista);
                 break;
@@ -182,17 +176,13 @@ public class AnimalWS extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        GeneroDAO gdao = new GeneroDAO();
-        Genero genero;
         String msg;
-        Long id_genero = Long.parseLong(request.getParameter("txtGenero"));
         //verificar campos obrigatórios
         if (request.getParameter("txtNome") == null) {
             msg = "Campos obrigatórios não informados";
         } else {
             dao = new AnimalDAO();
             obj = new Animal();
-            genero = gdao.buscarPorChavePrimaria(id_genero);
             //preencho o objeto com o que vem do post
 
             Boolean deucerto;
@@ -205,7 +195,8 @@ public class AnimalWS extends HttpServlet {
                 obj.setEndFoto3(request.getParameter("txtFoto3"));
                 obj.setNome(request.getParameter("txtNome"));
                 obj.setDescricao(request.getParameter("txtDescricao"));
-                obj.setGenero(genero); //é declarado la em cima
+                obj.setGenero(request.getParameter("txtGenero")); //é declarado la em cima
+                
                 deucerto = dao.alterar(obj);
                 pagina = "animal-ok.jsp";
             } 
@@ -216,7 +207,7 @@ public class AnimalWS extends HttpServlet {
                 obj.setEndFoto3(request.getParameter("txtFoto3"));
                 obj.setNome(request.getParameter("txtNome"));
                 obj.setDescricao(request.getParameter("txtDescricao"));
-                obj.setGenero(genero);
+                obj.setGenero(request.getParameter("txtGenero"));
                 deucerto = dao.incluir(obj);
                 pagina = "animal-ok.jsp";
             }
@@ -250,10 +241,4 @@ public class AnimalWS extends HttpServlet {
         return animals;
     }
     
-    private List<Genero> listaGenero() {
-        GeneroDAO dao = new GeneroDAO();
-        List<Genero> generos = dao.listar();
-        dao.fecharConexao();
-        return generos;
-    }
 }

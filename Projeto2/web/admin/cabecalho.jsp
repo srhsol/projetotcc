@@ -45,7 +45,7 @@
 				          <li><a href="volunteer.jsp">Usuários</a></li>
 				          <li class="menu-has-children"><a href="">Cadastrar</a>
 				            <ul>
-				              <li><a href="cats.jsp">Gatos</a></li>
+				              <li><a href="../cats.jsp">Gatos</a></li>
 				              <li><a href="dogs.jsp">Cães</a></li>
 				            </ul>
 				          </li>						          

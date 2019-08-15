@@ -65,7 +65,7 @@
     <br>
     <h4>Adicionar outros</h4>
     <br>
-    <a href="animal.jsp" class="primary-btn text-uppercase">Animais</a>
+    <a href="AnimalWS?acao=add" class="primary-btn text-uppercase">Animais</a>
     <a href="../produto.jsp" class="primary-btn text-uppercase">Produtos</a>
     <a href="../evento.jsp" class="primary-btn text-uppercase">Eventos</a>
 

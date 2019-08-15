@@ -41,9 +41,9 @@ public class admin implements Filter {
                 ||path.startsWith("/Projeto2/admin/assets/"))||(admin.getId()!=null)){
             chain.doFilter(request, response);
         }else{
-            //chain.doFilter(request, response);
-            request.setAttribute("msg","Você não está logado no sistema!");
-            ((HttpServletResponse)response).sendRedirect("../login/login.jsp");
+            chain.doFilter(request, response);
+            //request.setAttribute("msg","Você não está logado no sistema!");
+            //((HttpServletResponse)response).sendRedirect("../login/login.jsp");
         }
         
     }
