@@ -37,17 +37,19 @@
 			    <div class="container main-menu">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="../indexAdmin.jsp"><img src="../img/logo2.png" alt="" title="" /></a>
+				        <a href="../login/LoginWS"><img src="../img/logo2.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="../indexAdmin.jsp">Início</a></li>
 				          <li><a href="./about.jsp">Sobre nós</a></li>
 				          <li><a href="volunteer.jsp">Usuários</a></li>
-				          <li class="menu-has-children"><a href="">Cadastrar</a>
+				          <li class="menu-has-children"><a href="">Listar</a>
 				            <ul>
-				              <li><a href="cats.jsp">Gatos</a></li>
-				              <li><a href="dogs.jsp">Cães</a></li>
+				              <li><a href="AnimalWS?acao=list">Animais</a></li>
+				              <li><a href="ProdutoWS?acao=list">Produtos</a></li>
+                                              <li><a href="EventoWS?acao=list">Eventos</a></li>
+                                              <li><a href="DoacaoWS?acao=list">Doações</a></li>
 				            </ul>
 				          </li>						          
 				          <li><a href="contact.jsp">Contato</a></li>

@@ -63,7 +63,6 @@
     <br>
     <h4>Adicionar outros</h4>
     <br>
-    <a href="../produto.jsp" class="primary-btn text-uppercase">Produtos</a>
     <a href="evento.jsp" class="primary-btn text-uppercase">Eventos</a>
 
 </div>

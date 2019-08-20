@@ -65,7 +65,8 @@
                         <textarea class="single-input-primary" name="txtDescricao" placeholder="Descrição" ></textarea>
                     </div>
                     <div class="single-element-widget mt-30">
-                        <div class="default-select" id="default-select"">
+                        <div class="default-select" id="default-select">
+                            Gênero
                             <select>
                                 <option value="1">Fêmea</option>
                                 <option value="2">Macho</option>
@@ -73,8 +74,8 @@
                         </div>
                     </div>
                     <div class="single-element-widget mt-30">
-                        <h3 class="mb-30">Idade</h3>
-                        <div class="default-select" id="default-select"">
+                        Idade
+                        <div class="default-select" id="default-select">
                             <select>
                                 <option value="1">Filhote</option>
                                 <option value="2">Jovem</option>

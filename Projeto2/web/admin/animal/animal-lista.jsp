@@ -29,6 +29,11 @@
 
     <div class="progress-table-wrap">
         <div class="progress-table">
+            <form role="search" class="">
+                <input type="text" placeholder="Procurar..." class="form-control">
+                <a href=""><i class="fa fa-search"></i></a>
+            </form>
+
             <div class="table-head">
                 <div class="serial">ID</div>
                 <div class="country">Foto 1</div>
@@ -66,8 +71,6 @@
     <h4>Adicionar outros</h4>
     <br>
     <a href="AnimalWS?acao=add" class="primary-btn text-uppercase">Animais</a>
-    <a href="../produto.jsp" class="primary-btn text-uppercase">Produtos</a>
-    <a href="../evento.jsp" class="primary-btn text-uppercase">Eventos</a>
 
 </div>
 

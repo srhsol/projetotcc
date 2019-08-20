@@ -20,15 +20,15 @@
 			<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="../../css/linearicons.css">
-			<link rel="stylesheet" href="../css/font-awesome.min.css">
-			<link rel="stylesheet" href="../../css/bootstrap.css">
-			<link rel="stylesheet" href="../../css/magnific-popup.css">
-			<link rel="stylesheet" href="../../css/nice-select.css">							
-			<link rel="stylesheet" href="../../css/animate.min.css">
-			<link rel="stylesheet" href="../../css/owl.carousel.css">
-			<link rel="stylesheet" href="../../css/main.css">
-                        <link rel="stylesheet" href="../../css/main.css">
+			<link rel="stylesheet" href="./../css/linearicons.css">
+			<link rel="stylesheet" href="./../css/font-awesome.min.css">
+			<link rel="stylesheet" href="./../css/bootstrap.css">
+			<link rel="stylesheet" href="./../css/magnific-popup.css">
+			<link rel="stylesheet" href="./../css/nice-select.css">							
+			<link rel="stylesheet" href="./../css/animate.min.css">
+			<link rel="stylesheet" href="./../css/owl.carousel.css">
+			<link rel="stylesheet" href="./../css/main.css">
+                        <link rel="stylesheet" href="./../css/main.css">
                         
 		</head>
 		<body>
@@ -36,22 +36,24 @@
 			    <div class="container main-menu">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="indexAdmin.jsp"><img src="../img/logo2.png" alt="" title="" /></a>
+				        <a href="indexAdmin.jsp"><img src="./../img/logo-esse.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="indexAdmin.jsp">Início</a></li>
 				          <li><a href="about.jsp">Sobre nós</a></li>
 				          <li><a href="volunteer.jsp">Usuários</a></li>
-				          <li class="menu-has-children"><a href="">Cadastrar</a>
+				          <li class="menu-has-children"><a href="">Listar</a>
 				            <ul>
-				              <li><a href="../cats.jsp">Gatos</a></li>
-				              <li><a href="dogs.jsp">Cães</a></li>
+				              <li><a href="./AnimalWS?acao=list">Animais</a></li>
+				              <li><a href="ProdutoWS?acao=list">Produtos</a></li>
+                                              <li><a href="EventoWS?acao=list">Eventos</a></li>
+                                              <li><a href="DoacaoWS?acao=list">Doações</a></li>
 				            </ul>
-				          </li>						          
+				          </li>						          						          
 				          <li><a href="contact.jsp">Contato</a></li>
-				          <li class="menu-has-children"><a href="">Dropdown</a>
-				            <ul>
+				          <li class="menu-has-children"><a href="../admin/AdminWS?acao=sair">Sair</a>
+				           <!-- <ul>
 				              <li><a href="elements.html">Elements</a></li>	
 				              <li><a href="#">Item</a></li>
 				              <li class="menu-has-children"><a href="">Level 2</a>
@@ -60,7 +62,7 @@
 					              <li><a href="#">Item 2</a></li>
 					            </ul>
 					          </li>	
-				            </ul>
+				            </ul> -->
 				          </li>				              
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		

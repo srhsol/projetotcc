@@ -45,7 +45,7 @@
 
                     <br>
                     <button class="primary-btn text-uppercase">Salvar</button>
-
+                    <input type="button" class="primary-btn text-uppercase" value="Voltar" onClick="history.go(-1)">
                 </form>
                 
                             

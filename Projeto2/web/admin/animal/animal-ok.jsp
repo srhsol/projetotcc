@@ -35,8 +35,6 @@
     <h4>Listar todos</h4>
     <br>
     <a href="AnimalWS?acao=list" class="primary-btn text-uppercase">Animais</a>
-    <a href="ProdutoWS?acao=list" class="primary-btn text-uppercase">Produtos</a>
-    <a href="EventoWS?acao=list" class="primary-btn text-uppercase">Eventos</a>
 
 </div>
 
