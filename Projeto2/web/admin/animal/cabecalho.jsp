@@ -41,7 +41,7 @@
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="../indexAdmin.jsp">Início</a></li>
+				          <li class="menu-active"><a href="../inicio/indexAdmin.jsp">Início</a></li>
 				          <li><a href="./about.jsp">Sobre nós</a></li>
 				          <li><a href="volunteer.jsp">Usuários</a></li>
 				          <li class="menu-has-children"><a href="">Listar</a>

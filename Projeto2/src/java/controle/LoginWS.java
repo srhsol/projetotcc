@@ -24,7 +24,7 @@ import util.Criptografia;
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "LoginWS", urlPatterns = {"/admin/login/LoginWS"})
+@WebServlet(name = "LoginWS", urlPatterns = {"/admin/login/LoginWS",})
 public class LoginWS extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +38,7 @@ public class LoginWS extends HttpServlet {
             Admin admin = dao.fazerLogin(email, senha);
             if(admin.getId()!=null){
                 request.getSession().setAttribute("admin",admin);
-                pagina = "../indexAdmin.jsp";
+                pagina = "../inicio/indexAdmin.jsp";
             }else{
                 request.setAttribute("msg", "Senha e/ou Login incorretos!");
                 pagina = "login.jsp";

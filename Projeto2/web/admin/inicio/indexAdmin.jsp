@@ -10,7 +10,7 @@
                 <br><br><br><br><br><br><br>
                 
                 <h1 class="text-uppercase">
-                    Bem vindo, administrador <br>
+                    Bem vindo, ${sessionScope['admin'].nome} <br>
                     </h1>
                 
                 <p class="text-white sub-head">
@@ -40,7 +40,7 @@
             <h1>Cadastrar animal</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="./animal/AnimalWS?acao=add" class="primary-btn">Cadastrar</a>
+            <a href="../animal/AnimalWS?acao=add" class="primary-btn">Cadastrar</a>
         </div>							
     </div>
 </div>	
@@ -51,7 +51,7 @@
             <h1>Cadastrar produto</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="./produto/ProdutoWS?acao=add" class="primary-btn">Cadastrar</a>
+            <a href="../produto/ProdutoWS?acao=add" class="primary-btn">Cadastrar</a>
         </div>							
     </div>
 </div>	
@@ -62,7 +62,7 @@
             <h1>Cadastrar eventos</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="./evento/EventoWS?acao=add" class="primary-btn">Cadastrar</a>
+            <a href="../evento/EventoWS?acao=add" class="primary-btn">Cadastrar</a>
         </div>							
     </div>
 </div>
@@ -73,7 +73,7 @@
             <h1>Solicitar doações</h1>
         </div>
         <div class="col-lg-4 callto-top-right">
-            <a href="./doacao/DoacaoWS?acao=add" class="primary-btn">Solicitar</a>
+            <a href="../doacao/DoacaoWS?acao=add" class="primary-btn">Solicitar</a>
         </div>							
     </div>
 </div>

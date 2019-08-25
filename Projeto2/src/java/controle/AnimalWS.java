@@ -27,7 +27,7 @@ import util.FormataData;
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "AnimalWS", urlPatterns = {"/admin/animal/AnimalWS"})
+@WebServlet(name = "AnimalWS", urlPatterns = {"/admin/animal/AnimalWS", "/public/AnimalWS"})
 public class AnimalWS extends HttpServlet {
 
     private AnimalDAO dao;
@@ -74,21 +74,18 @@ public class AnimalWS extends HttpServlet {
                 pagina = "detalhe.jsp";
                 break;
             case "list":
-                dao = new AnimalDAO();
-                if (request.getParameter("filtro") != null) {
-                    try {
-                        lista = dao.listar(request.getParameter("filtro"));
-                    } catch (Exception ex) {
-                        Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    lista = dao.listar();
+                request.setAttribute("animal", this.listaAnimal());
+                
+                try {
+                        lista = this.listaAnimal();
+                    
+                } catch (Exception ex) {
+                    Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                //passar a listagem para a página
-                request.setAttribute("lista", this.listaAnimal());
-                //pra onde deve ser redirecionada a página
+                request.setAttribute("lista", lista);
                 pagina = "animal-lista.jsp";
                 break;
+                
             default:
                 dao = new AnimalDAO();
                 if (request.getParameter("filtro") != null) {

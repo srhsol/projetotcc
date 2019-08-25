@@ -26,14 +26,12 @@
         <p>Animais
         </p>
     </h1>
-
+    <form action="" method="" role="search">
+        <input type="text" placeholder="Procurar..." class="form-control">
+        <a href="AnimalWS?acao=filtro"><i class="fa fa-search"></i></a>
+    </form>
     <div class="progress-table-wrap">
         <div class="progress-table">
-            <form role="search" class="">
-                <input type="text" placeholder="Procurar..." class="form-control">
-                <a href=""><i class="fa fa-search"></i></a>
-            </form>
-
             <div class="table-head">
                 <div class="serial">ID</div>
                 <div class="country">Foto 1</div>

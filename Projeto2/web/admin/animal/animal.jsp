@@ -83,6 +83,15 @@
                             </select>
                         </div>
                     </div>
+                    <div class="single-element-widget mt-30">
+                        Tipo
+                        <div class="default-select" id="default-select">
+                            <select>
+                                <option value="1">Gato</option>
+                                <option value="2">Cachorro</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <br>
                     <button class="primary-btn text-uppercase">Salvar</button>
