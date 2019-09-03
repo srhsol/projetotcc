@@ -41,7 +41,7 @@
 				          <li class="menu-active"><a href="index.jsp">Início</a></li>
 				          <li><a href="about.jsp">Sobre nós</a></li>
 				          <li><a href="cats.jsp">Gatos</a></li>
-				          <li><a href="dogs.jsp">Cães</a></li>
+				          <li><a href="AnimalWS?acao=listAnimal">Cães</a></li>
 				          <li><a href="volunteer.jsp">Voluntário</a></li>
 				          <li><a href="contact.html">Contato</a></li>
 				          				              

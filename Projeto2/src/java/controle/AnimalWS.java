@@ -41,8 +41,8 @@ public class AnimalWS extends HttpServlet {
         acao = request.getParameter("acao");
         List<Animal> lista = null;
         String id;
-        
-        switch(String.valueOf(acao)){
+
+        switch (String.valueOf(acao)) {
             case "add":
                 pagina = "animal.jsp";
                 break;
@@ -52,11 +52,10 @@ public class AnimalWS extends HttpServlet {
                 pagina = "animal-lista.jsp";
                 obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 Boolean deucerto = dao.excluir(obj);
-                if(deucerto){   
+                if (deucerto) {
                     request.setAttribute("lista", this.listaAnimal());
                     request.setAttribute("msg", "Excluído com sucesso");
-                }
-                else{
+                } else {
                     request.setAttribute("msg", "Erro ao excluir");
                 }
                 break;
@@ -75,17 +74,28 @@ public class AnimalWS extends HttpServlet {
                 break;
             case "list":
                 request.setAttribute("animal", this.listaAnimal());
-                
+
                 try {
-                        lista = this.listaAnimal();
-                    
+                    lista = this.listaAnimal();
+
                 } catch (Exception ex) {
                     Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 request.setAttribute("lista", lista);
                 pagina = "animal-lista.jsp";
                 break;
-                
+            case "listAnimal":
+                request.setAttribute("animal", this.listaAnimal());
+
+                try {
+                    lista = this.listaAnimal();
+
+                } catch (Exception ex) {
+                    Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                request.setAttribute("lista", lista);
+                pagina = "dogs.jsp";
+                break;
             default:
                 dao = new AnimalDAO();
                 if (request.getParameter("filtro") != null) {
@@ -103,7 +113,7 @@ public class AnimalWS extends HttpServlet {
                 request.setAttribute("lista", lista);
                 break;
         }
-        
+
         /*
         switch (String.valueOf(acao)) {
             case "list":
@@ -163,7 +173,7 @@ public class AnimalWS extends HttpServlet {
                 break;
 
         }
-        */
+         */
         RequestDispatcher destino = request.getRequestDispatcher(pagina);
         destino.forward(request, response);
 
@@ -193,11 +203,10 @@ public class AnimalWS extends HttpServlet {
                 obj.setNome(request.getParameter("txtNome"));
                 obj.setDescricao(request.getParameter("txtDescricao"));
                 obj.setGenero(request.getParameter("txtGenero")); //é declarado la em cima
-                
+
                 deucerto = dao.alterar(obj);
                 pagina = "animal-ok.jsp";
-            } 
-            //adiciona
+            } //adiciona
             else {
                 obj.setEndFoto1(request.getParameter("txtFoto1"));
                 obj.setEndFoto2(request.getParameter("txtFoto2"));
@@ -237,5 +246,5 @@ public class AnimalWS extends HttpServlet {
         dao.fecharConexao();
         return animals;
     }
-    
+
 }

@@ -2340,6 +2340,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
 }
 
+.banner-area-cao {
+  background: url(../img/banner-bg.jpg) center;
+  background-size: cover;
+}
+
 .banner-area .primary-btn {
   padding-left: 30px;
   padding-right: 30px;

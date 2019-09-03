@@ -68,8 +68,8 @@
                         <div class="default-select" id="default-select">
                             Gênero
                             <select>
-                                <option value="1">Fêmea</option>
-                                <option value="2">Macho</option>
+                                <option value="Fêmea">Fêmea</option>
+                                <option value="Macho">Macho</option>
                             </select>
                         </div>
                     </div>
@@ -77,9 +77,9 @@
                         Idade
                         <div class="default-select" id="default-select">
                             <select>
-                                <option value="1">Filhote</option>
-                                <option value="2">Jovem</option>
-                                <option value="3">Adulto</option>
+                                <option value="Filhote">Filhote</option>
+                                <option value="Jovem">Jovem</option>
+                                <option value="Adulto">Adulto</option>
                             </select>
                         </div>
                     </div>
@@ -87,8 +87,8 @@
                         Tipo
                         <div class="default-select" id="default-select">
                             <select>
-                                <option value="1">Gato</option>
-                                <option value="2">Cachorro</option>
+                                <option value="Gato">Gato</option>
+                                <option value="Cachorro">Cachorro</option>
                             </select>
                         </div>
                     </div>
