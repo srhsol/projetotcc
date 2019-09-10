@@ -76,11 +76,21 @@
                 <h1>Escolha seu pet favorito</h1>
             </div>
             <div class="col-lg-4 callto-top-right">
-                <a href="#" class="primary-btn">Escolher</a>
-            </div>							
+                <a href="AnimalWS?acao=listAnimal" class="primary-btn">Escolher</a>
+            </div>
+        </div>
+        <br><br>
+        <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
+            <div class="col-lg-8 callto-top-left">
+                <h1>Veja nossos produtos</h1>
+            </div>
+            <div class="col-lg-4 callto-top-right">
+                <a href="ProdutoWS?acao=listProduto" class="primary-btn">Espiar</a>
+            </div>
         </div>
     </div>	
 </section>
+
 <!-- End callto-top Area -->
 
 
@@ -129,7 +139,7 @@
             <div class="menu-content pb-60 col-lg-8">
                 <div class="title text-center">
                     <h1 class="mb-10">Processo para adotar seu pet</h1>
-                    <p>Esteja pronto para adotar o seu novo amigo!</p>
+                    <p>Esteja pronto para receber o seu novo aumiguinho!</p>
                 </div>
             </div>
         </div>					

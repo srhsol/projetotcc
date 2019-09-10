@@ -26,7 +26,7 @@ import util.FormataData;
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "EventoWS", urlPatterns = {"/admin/evento/EventoWS"})
+@WebServlet(name = "EventoWS", urlPatterns = {"/admin/evento/EventoWS", "/public/EventoWS"})
 public class EventoWS extends HttpServlet {
 
     private EventoDAO dao;
@@ -77,6 +77,18 @@ public class EventoWS extends HttpServlet {
                 Evento obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 request.setAttribute("obj", obj);
                 pagina = "edita.jsp";
+                break;
+                case "listEvento":
+                request.setAttribute("evento", this.listaEvento());
+
+                try {
+                    lista = this.listaEvento();
+
+                } catch (Exception ex) {
+                    Logger.getLogger(EventoWS.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                request.setAttribute("lista", lista);
+                pagina = "eventos.jsp";
                 break;
             default:
                 dao = new EventoDAO();

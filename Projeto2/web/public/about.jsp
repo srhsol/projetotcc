@@ -21,21 +21,20 @@
 
 <div class="col-lg-8 home-about-right ">
     <h1>
-        <p>Como funciona 
-            o nosso trabalho?
+        <p>Como funciona o nosso trabalho?
         </p>
     </h1>
 
-    <h5>Somos uma instituição sem fins lucrativos, onde contamos com a doação da comunidade para
-        sustentarmos os animais. Temos diversos atendimentos, além da adoção de animais contamos com 
-        a castração de animais, cuidados de animais de rua e veterinários vinculados ao nosso sistema.
-        Sendo assim, o Rabitos também possui produtos para a venda e realizamos eventos para a comunidade 
+    <h5>Somos o Projeto Cuidar, Coordenadoria do Bem-Estar Animal (CBEA), da prefeitura. 
+        Temos diversos atendimentos, além da adoção de animais contamos com a castração, cuidados  
+        dos de rua e veterinários vinculados ao nosso sistema.
+        Sendo assim, o Projeto Cuidar também possui produtos para a venda e realizamos eventos para a comunidade 
         externa, como feirinha de adoções.</h5>
     
     <h4>Saiba mais</h4>
     <br>
-    <a href="#" class="primary-btn text-uppercase">Produtos</a>
-    <a href="#" class="primary-btn text-uppercase">Eventos</a>
+    <a href="ProdutoWS?acao=listProduto" class="primary-btn text-uppercase">Produtos</a>
+    <a href="EventoWS?acao=listEvento" class="primary-btn text-uppercase">Eventos</a>
 
 </div>
 

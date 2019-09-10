@@ -51,18 +51,7 @@
 				            </ul>
 				          </li>						          
 				          <li><a href="contact.jsp">Contato</a></li>
-				          <li class="menu-has-children"><a href="">Dropdown</a>
-				            <ul>
-				              <li><a href="elements.html">Elements</a></li>	
-				              <li><a href="#">Item</a></li>
-				              <li class="menu-has-children"><a href="">Level 2</a>
-					            <ul>
-					              <li><a href="#">Item 1</a></li>
-					              <li><a href="#">Item 2</a></li>
-					            </ul>
-					          </li>	
-				            </ul>
-				          </li>				              
+				          <li class="menu-has-children"><a href="../admin/AdminWS?acao=sair">Sair</a>				              
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>

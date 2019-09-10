@@ -27,8 +27,6 @@
                         <img style="height: 400px;" src="../arquivos/${obj.endFoto2}" alt="" />
                         <img style="height: 400px;" src="../arquivos/${obj.endFoto3}" alt="" />
                     </div>
-
-
                 </div>
             </div>
             <ul id="single-product-tab">

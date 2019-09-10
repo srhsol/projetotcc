@@ -24,7 +24,7 @@ import util.FormataData;
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "DoacaoWS", urlPatterns = {"/admin/doacao/DoacaoWS"})
+@WebServlet(name = "DoacaoWS", urlPatterns = {"/admin/doacao/DoacaoWS", "/public/DoacaoWS"})
 public class DoacaoWS extends HttpServlet {
     private DoacaoDAO dao;
     private Doacao obj;
