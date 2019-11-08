@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/controle/AnimalWS.java</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/admin/animal/animal-lista.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/modelo/Animal.java</file>
             <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/index.jsp</file>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/produtos.jsp</file>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/rodape.jsp</file>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/modelo/Produto.java</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/controle/AnimalWS.java</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/admin/animal/animal-ok.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/dogs.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/voluntario.jsp</file>
         </group>
     </open-files>
 </project-private>

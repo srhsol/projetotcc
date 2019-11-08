@@ -329,7 +329,7 @@
             </p>
             <div class="buttons d-flex flex-row">
                 <a href="#" class="primary-btn text-uppercase">Como fazer?</a>
-                <a href="#" class="primary-btn text-uppercase">Cadastre-se</a>
+                <a href="./voluntario/voluntario.jsp" class="primary-btn text-uppercase">Cadastre-se</a>
             </div>
         </div>
     </div>	

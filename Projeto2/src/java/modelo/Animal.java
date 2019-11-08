@@ -23,7 +23,8 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "Animal.findAll", query = "SELECT a FROM Animal a"),
-    @NamedQuery(name = "Animal.findFilter", query = "SELECT a FROM Animal a WHERE a.nome like :filtro")
+    @NamedQuery(name = "Animal.findFilter", query = "SELECT a FROM Animal a WHERE a.nome like :filtro"),
+    //@NamedQuery(name = "Animal.findFilter", query = "SELECT a FROM Animal a WHERE a.idade like :filtro")
 })
 public class Animal implements Serializable {
 

@@ -43,7 +43,6 @@
                     <div class="percentage">${obj.nome}</div>
                     <div class="percentage">${obj.local}</div>
                     <div class="data">${obj.data}</div>
-
                 </div>
             </c:forEach>
         </div>

@@ -23,16 +23,16 @@
 <body>
     <div class="col-lg-8 home-about-right ">
         <h1>
-            <p>Produtos
+            <p>Voluntarios
             </p>
         </h1>
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
                     <div class="serial">ID</div>
-                    <div class="country">Foto</div>
-                    <div class="country">Produto</div>
-                    <div class="visit">Valor</div>
+                    <div class="country">Nome</div>
+                    <div class="visit">Email</div>
+                    <div class="visit">Endereço</div>
                     <div class="visit">Edita</div>
                     <div class="visit">Excluir</div>
                 </div>
@@ -40,16 +40,16 @@
                 <c:forEach items="${lista}" var="obj">
                     <div class="table-row">
                         <div class="serial">${obj.id}</div>
-                        <div class="country"><img src="../../arquivos/${obj.endFoto}" height="42" width="42"></div>
                         <div class="country">${obj.nome}</div>
-                        <div class="visit">${obj.valor}</div>
+                        <div class="visit">${obj.email}</div>
+                        <div class="visit">${obj.endereço}</div>
                         <div class="visit">
-                            <a class="btn btn-primary btn-fab btn-icon btn-round" href="ProdutoWS?acao=edit&id=${obj.id}">
+                            <a class="btn btn-primary btn-fab btn-icon btn-round" href="VoluntarioWS?acao=edit&id=${obj.id}">
                                 <i class="fa fa-edit"></i>
                             </a>
                         </div>
                         <div class="visit">
-                            <a class="btn btn-primary btn-fab btn-icon btn-round" href="ProdutoWS?acao=del&id=${obj.id}">
+                            <a class="btn btn-primary btn-fab btn-icon btn-round" href="VoluntarioWS?acao=del&id=${obj.id}">
                                 <i class="fa fa-close"></i>
                             </a>
                         </div> 
@@ -61,7 +61,7 @@
         <br>
         <h4>Adicionar outros</h4>
         <br>
-        <a href="ProdutoWS?acao=add" class="primary-btn text-uppercase">Produtos</a>
+        <a href="VoluntarioWS?acao=add" class="primary-btn text-uppercase">Voluntarios</a>
         <a href="../EventoWS?acao=add" class="primary-btn text-uppercase">Eventos</a>
 
     </div>

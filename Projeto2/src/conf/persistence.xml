@@ -7,6 +7,7 @@
     <class>modelo.Evento</class>
     <class>modelo.Admin</class>
     <class>modelo.Doacao</class>
+    <class>modelo.Voluntario</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/proj2"/>

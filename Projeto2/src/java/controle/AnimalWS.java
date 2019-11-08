@@ -108,72 +108,12 @@ public class AnimalWS extends HttpServlet {
                     lista = this.listaAnimal();
                 }
                 //pra onde deve ser redirecionada a página
-                pagina = "animal-lista.jsp";
+                pagina = "dogs.jsp";
                 //passar a listagem para a página
                 request.setAttribute("lista", lista);
                 break;
         }
 
-        /*
-        switch (String.valueOf(acao)) {
-            case "list":
-                request.setAttribute("genero", this.listaGenero());
-                dao = new AnimalDAO();
-                if (request.getParameter("filtro") != null) {
-                    try {
-                        lista = dao.listar(request.getParameter("filtro"));
-                    } catch (Exception ex) {
-                        Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    lista = dao.listar();
-                }
-                //passar a listagem para a página
-                request.setAttribute("lista", this.listaAnimal());
-                //pra onde deve ser redirecionada a página
-                pagina = "animal-lista.jsp";
-                break;
-            case "del":
-                id = request.getParameter("id");
-                dao = new AnimalDAO();
-                pagina = "animal-lista.jsp";
-                obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
-                Boolean deucerto = dao.excluir(obj);
-                if (deucerto) {
-                    lista = dao.listar();
-                    request.setAttribute("lista", lista);
-                    request.setAttribute("msg", "Excluído com sucesso");
-                } else {
-                    request.setAttribute("msg", "Erro ao excluir");
-                }
-                break;
-            case "edit":
-                id = request.getParameter("id");
-                dao = new AnimalDAO();
-                Animal obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
-                request.setAttribute("obj", obj);
-                request.setAttribute("genero", this.listaGenero());
-                pagina = "edita.jsp";
-                break;
-            default:
-                dao = new AnimalDAO();
-                if (request.getParameter("filtro") != null) {
-                    try {
-                        lista = dao.listar(request.getParameter("filtro"));
-                    } catch (Exception ex) {
-                        Logger.getLogger(AnimalWS.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    lista = dao.listar();
-                }
-                //pra onde deve ser redirecionada a página
-                pagina = "index.jsp";
-                //passar a listagem para a página
-                request.setAttribute("lista", lista);
-                break;
-
-        }
-         */
         RequestDispatcher destino = request.getRequestDispatcher(pagina);
         destino.forward(request, response);
 
@@ -202,7 +142,9 @@ public class AnimalWS extends HttpServlet {
                 obj.setEndFoto3(request.getParameter("txtFoto3"));
                 obj.setNome(request.getParameter("txtNome"));
                 obj.setDescricao(request.getParameter("txtDescricao"));
-                obj.setGenero(request.getParameter("txtGenero")); //é declarado la em cima
+                obj.setGenero(request.getParameter("genero"));
+                obj.setIdade(request.getParameter("idade"));
+                obj.setTipo(request.getParameter("tipo"));
 
                 deucerto = dao.alterar(obj);
                 pagina = "animal-ok.jsp";
@@ -213,7 +155,9 @@ public class AnimalWS extends HttpServlet {
                 obj.setEndFoto3(request.getParameter("txtFoto3"));
                 obj.setNome(request.getParameter("txtNome"));
                 obj.setDescricao(request.getParameter("txtDescricao"));
-                obj.setGenero(request.getParameter("txtGenero"));
+                obj.setGenero(request.getParameter("genero"));
+                obj.setIdade(request.getParameter("idade"));
+                obj.setTipo(request.getParameter("tipo"));
                 deucerto = dao.incluir(obj);
                 pagina = "animal-ok.jsp";
             }

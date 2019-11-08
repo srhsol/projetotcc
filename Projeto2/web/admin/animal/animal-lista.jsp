@@ -26,10 +26,7 @@
         <p>Animais
         </p>
     </h1>
-    <form action="" method="" role="search">
-        <input type="text" placeholder="Procurar..." class="form-control">
-        <a href="AnimalWS?acao=filtro"><i class="fa fa-search"></i></a>
-    </form>
+    
     <div class="progress-table-wrap">
         <div class="progress-table">
             <div class="table-head">
@@ -49,7 +46,7 @@
                     <div class="country"><img src="../../arquivos/${obj.endFoto1}" height="42" width="42"></div>
                     <div class="country"><img src="../../arquivos/${obj.endFoto2}" height="42" width="42"></div>
                     <div class="country"><img src="../../arquivos/${obj.endFoto3}" height="42" width="42"></div>
-                    <div class="nome">${obj.nome}</div>
+                    <div class="country">${obj.nome}</div>
                     <div class="percentage">${obj.descricao}</div>
                     <div class="visit">
                         <a class="btn btn-warning" href="AnimalWS?acao=edit&id=${obj.id}">

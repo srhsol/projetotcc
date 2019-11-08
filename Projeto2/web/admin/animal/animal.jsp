@@ -67,7 +67,7 @@
                     <div class="single-element-widget mt-30">
                         <div class="default-select" id="default-select">
                             Gênero
-                            <select>
+                            <select name="genero">
                                 <option value="Fêmea">Fêmea</option>
                                 <option value="Macho">Macho</option>
                             </select>
@@ -76,7 +76,7 @@
                     <div class="single-element-widget mt-30">
                         Idade
                         <div class="default-select" id="default-select">
-                            <select>
+                            <select name="idade">
                                 <option value="Filhote">Filhote</option>
                                 <option value="Jovem">Jovem</option>
                                 <option value="Adulto">Adulto</option>
@@ -86,7 +86,7 @@
                     <div class="single-element-widget mt-30">
                         Tipo
                         <div class="default-select" id="default-select">
-                            <select>
+                            <select name="tipo">
                                 <option value="Gato">Gato</option>
                                 <option value="Cachorro">Cachorro</option>
                             </select>
