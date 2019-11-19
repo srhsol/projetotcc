@@ -38,8 +38,8 @@
             <div class="col-lg-8 col-md-8">
                 <h3 class="mb-30">Cadastre-se!</h3>
 
-                <form action="UploadWS" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="urldestino" value="VoluntarioWS">
+                <form action="VoluntarioWS" method="post" >
+                    
                     <div class="mt-10">
                         <input type="text" name="txtNome" placeholder="Nome" class="single-input-primary">
                     </div>
@@ -54,6 +54,17 @@
                     <button class="primary-btn text-uppercase">Cadastrar</button>
                     <input type="button" class="primary-btn text-uppercase" value="Voltar" onClick="history.go(-1)">
                 </form>
+                
+                    <div class="card-footer">
+        <c:if test = "${not empty msg}">
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                ${msg}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="tim-icons icon-simple-remove"></i>
+                </button>
+            </div>
+        </c:if>
+    </div>
 
 
             </div>

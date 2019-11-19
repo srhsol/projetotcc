@@ -28,8 +28,6 @@
         <link rel="stylesheet" href="../assets/css/animate.min.css">
         <link rel="stylesheet" href="../assets/css/owl.carousel.css">
         <link rel="stylesheet" href="../assets/css/main.css">
-        
-
     </head>
     <body>
         <header id="header" id="home" class="header-scrolled">
@@ -42,7 +40,7 @@
                         <ul class="nav-menu">
                             <li class="menu-active"><a href="../indexAdmin.jsp">Início</a></li>
                             <li><a href="about.jsp">Sobre nós</a></li>
-                            <li><a href="volunteer.jsp">Usuários</a></li>
+                            <li><a href="../voluntario/voluntario-lista.jsp">Voluntários</a></li>
                             <li class="menu-has-children"><a href="">Listar</a>
                                 <ul>
                                     <li><a href="./AnimalWS?acao=list">Animais</a></li>

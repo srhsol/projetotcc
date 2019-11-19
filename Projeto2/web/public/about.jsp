@@ -24,7 +24,7 @@
         <p>Como funciona o nosso trabalho?
         </p>
     </h1>
-
+    
     <h5>Somos o Projeto Cuidar, Coordenadoria do Bem-Estar Animal (CBEA), da prefeitura. 
         Temos diversos atendimentos, além da adoção de animais contamos com a castração, cuidados  
         dos de rua e veterinários vinculados ao nosso sistema.

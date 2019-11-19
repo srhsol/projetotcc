@@ -25,7 +25,7 @@ import modelo.Voluntario;
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "VoluntarioWS", urlPatterns = {"/VoluntarioWS"})
+@WebServlet(name = "VoluntarioWS", urlPatterns = {"/public/voluntario/VoluntarioWS"})
 public class VoluntarioWS extends HttpServlet {
     private VoluntarioDAO dao;
     private Voluntario obj;
@@ -58,7 +58,7 @@ public class VoluntarioWS extends HttpServlet {
             case "del":
                 id = request.getParameter("id");
                 dao = new VoluntarioDAO();
-                pagina = "../admin/voluntario/voluntario-lista.jsp";
+                //pagina = "../admin/voluntario/voluntario-lista.jsp";
                 obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 Boolean deucerto = dao.excluir(obj);
                 if (deucerto) {
@@ -86,7 +86,7 @@ public class VoluntarioWS extends HttpServlet {
                     Logger.getLogger(VoluntarioWS.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 request.setAttribute("lista", lista);
-                pagina = "../admin/voluntario/voluntarios.jsp";
+                pagina = "../admin/voluntario/voluntario-lista.jsp";
                 break;
             default:
                 dao = new VoluntarioDAO();
@@ -100,7 +100,7 @@ public class VoluntarioWS extends HttpServlet {
                     lista = dao.listar();
                 }
                 //pra onde deve ser redirecionada a página
-                pagina = "../admin/voluntario/voluntario.jsp";
+                pagina = "../admin/voluntario/voluntario-lista.jsp";
                 //passar a listagem para a página
                 request.setAttribute("lista", lista);
                 break;
@@ -140,14 +140,15 @@ public class VoluntarioWS extends HttpServlet {
                 obj.setEmail(request.getParameter("txtEmail"));
                 obj.setEndereco(request.getParameter("txtEndereco"));
                 deucerto = dao.alterar(obj);
-                pagina = "../admin/voluntario/voluntario-ok.jsp";
+                pagina = "../admin/voluntario/edita.jsp";
             } //adiciona
             else {
                 obj.setNome(request.getParameter("txtNome"));
                 obj.setEmail(request.getParameter("txtEmail"));
                 obj.setEndereco(request.getParameter("txtEndereco"));
                 deucerto = dao.incluir(obj);
-                pagina = "../admin/voluntario/voluntario-ok.jsp";
+                request.setAttribute("msg", "Voluntário cadastrado!");
+                pagina = "../voluntario/voluntario.jsp";
             }
             if (deucerto) {
                 msg = "Operação realizada com sucesso";

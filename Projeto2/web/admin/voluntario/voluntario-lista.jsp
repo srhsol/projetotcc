@@ -42,7 +42,7 @@
                         <div class="serial">${obj.id}</div>
                         <div class="country">${obj.nome}</div>
                         <div class="visit">${obj.email}</div>
-                        <div class="visit">${obj.endereço}</div>
+                        <div class="visit">${obj.endereco}</div>
                         <div class="visit">
                             <a class="btn btn-primary btn-fab btn-icon btn-round" href="VoluntarioWS?acao=edit&id=${obj.id}">
                                 <i class="fa fa-edit"></i>
