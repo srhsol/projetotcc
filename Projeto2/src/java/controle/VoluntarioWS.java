@@ -25,7 +25,7 @@ import modelo.Voluntario;
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "VoluntarioWS", urlPatterns = {"/public/voluntario/VoluntarioWS"})
+@WebServlet(name = "VoluntarioWS", urlPatterns = {"/public/voluntario/VoluntarioWS", "/admin/voluntario/VoluntarioWS"})
 public class VoluntarioWS extends HttpServlet {
     private VoluntarioDAO dao;
     private Voluntario obj;
@@ -39,6 +39,9 @@ public class VoluntarioWS extends HttpServlet {
         List<Voluntario> lista = null;
         String id;
         switch (String.valueOf(acao)) {
+            case "add":
+                pagina = "voluntario.jsp";
+                break;
             case "list":
                 dao = new VoluntarioDAO();
                 if (request.getParameter("filtro") != null) {
@@ -53,7 +56,7 @@ public class VoluntarioWS extends HttpServlet {
                 //pra onde deve ser redirecionada a página
                 //passar a listagem para a página
                 request.setAttribute("lista", this.listaVoluntario());
-                pagina = "../admin/voluntario/voluntario-lista.jsp";
+                pagina = "../voluntario/voluntario-lista.jsp";
                 break;
             case "del":
                 id = request.getParameter("id");
@@ -74,7 +77,7 @@ public class VoluntarioWS extends HttpServlet {
                 dao = new VoluntarioDAO();
                 Voluntario obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 request.setAttribute("obj", obj);
-                pagina = "../admin/voluntario/edita.jsp";
+                pagina = "../voluntario/edita.jsp";
                 break;
             case "listVoluntario":
                 request.setAttribute("voluntario", this.listaVoluntario());
@@ -86,7 +89,7 @@ public class VoluntarioWS extends HttpServlet {
                     Logger.getLogger(VoluntarioWS.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 request.setAttribute("lista", lista);
-                pagina = "../admin/voluntario/voluntario-lista.jsp";
+                pagina = "../voluntario/voluntario-lista.jsp";
                 break;
             default:
                 dao = new VoluntarioDAO();
@@ -100,7 +103,7 @@ public class VoluntarioWS extends HttpServlet {
                     lista = dao.listar();
                 }
                 //pra onde deve ser redirecionada a página
-                pagina = "../admin/voluntario/voluntario-lista.jsp";
+                pagina = "../voluntario/voluntario-lista.jsp";
                 //passar a listagem para a página
                 request.setAttribute("lista", lista);
                 break;
@@ -140,7 +143,7 @@ public class VoluntarioWS extends HttpServlet {
                 obj.setEmail(request.getParameter("txtEmail"));
                 obj.setEndereco(request.getParameter("txtEndereco"));
                 deucerto = dao.alterar(obj);
-                pagina = "../admin/voluntario/edita.jsp";
+                pagina = "../voluntario/edita.jsp";
             } //adiciona
             else {
                 obj.setNome(request.getParameter("txtNome"));

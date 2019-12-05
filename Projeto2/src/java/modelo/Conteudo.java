@@ -24,10 +24,10 @@ public class Conteudo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     @Lob
     @Column(name="CHARS", columnDefinition = "CLOB", length=500)
     private String sobre;
-    
 
     public Long getId() {
         return id;
@@ -36,6 +36,16 @@ public class Conteudo implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getSobre() {
+        return sobre;
+    }
+
+    public void setSobre(String sobre) {
+        this.sobre = sobre;
+    }
+    
+    
 
     @Override
     public int hashCode() {
@@ -60,14 +70,6 @@ public class Conteudo implements Serializable {
     @Override
     public String toString() {
         return "modelo.Conteudo[ id=" + id + " ]";
-    }
-
-    public String getSobre() {
-        return sobre;
-    }
-
-    public void setSobre(String sobre) {
-        this.sobre = sobre;
     }
     
 }

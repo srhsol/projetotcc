@@ -20,6 +20,10 @@
 
 
 <!-- Start home-about Area -->
+<form role="search" class="mt-10">
+    <input type="text" name="filtro" placeholder="Search..." class="single-input-primary">
+    <!-- <a href="AnimalWS"><i class="fa fa-search"></i></a> -->
+</form>
 
 <div class="col-lg-8 home-about-right ">
     <h1>
@@ -37,7 +41,9 @@
                 <div class="nome">Nome</div>
                 <div class="percentage">Descrição</div>
                 <div class="visit">Edita</div>
-                <div class="visit">Excluir</div>
+                <div class="visit">Doado</div>
+                
+                
             </div>
 
             <c:forEach items="${lista}" var="obj">
@@ -53,11 +59,14 @@
                             <i class="fa fa-edit"></i>
                         </a>
                     </div>
-                    <div class="visit">
+                            <div class="visit">
+                                
+                            </div>
+                   <!-- <div class="visit">
                         <a class="btn btn-warning" href="AnimalWS?acao=del&id=${obj.id}">
                             <i class="fa fa-close"></i>
                         </a>
-                    </div> 
+                    </div> -->
                 </div>
             </c:forEach>
         </div>

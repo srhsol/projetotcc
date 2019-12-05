@@ -10,12 +10,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author Sarah Saraçol
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "Voluntario.findAll", query = "SELECT v FROM Voluntario v"),
+    @NamedQuery(name = "Voluntario.findFilter", query = "SELECT v FROM Voluntario v WHERE v.nome like :filtro")
+})
 public class Voluntario implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -25,11 +25,13 @@
         </p>
     </h1>
     
-    <h5>Somos o Projeto Cuidar, Coordenadoria do Bem-Estar Animal (CBEA), da prefeitura. 
+   <!-- Somos o Projeto Cuidar, da Coordenadoria do Bem-Estar Animal (CBEA), da prefeitura. 
         Temos diversos atendimentos, além da adoção de animais contamos com a castração, cuidados  
         dos de rua e veterinários vinculados ao nosso sistema.
         Sendo assim, o Projeto Cuidar também possui produtos para a venda e realizamos eventos para a comunidade 
-        externa, como feirinha de adoções.</h5>
+        externa, como feirinha de adoções. -->
+    
+    <h5>${obj.sobre}</h5>
     
     <h4>Saiba mais</h4>
     <br>

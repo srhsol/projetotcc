@@ -43,12 +43,14 @@
                             <li class="menu-active"><a href="../indexAdmin.jsp">Início</a></li>
                             <li><a href="about.jsp">Sobre nós</a></li>
                             <li><a href="volunteer.jsp">Usuários</a></li>
+                            <li><a href="ConteudoWS?acao=add">Editar</a></li>
                             <li class="menu-has-children"><a href="">Listar</a>
                                 <ul>
                                     <li><a href="./AnimalWS?acao=list">Animais</a></li>
                                     <li><a href="ProdutoWS?acao=list">Produtos</a></li>
                                     <li><a href="EventoWS?acao=list">Eventos</a></li>
                                     <li><a href="DoacaoWS?acao=list">Doações</a></li>
+                                    
                                 </ul>
                             </li>						          						          
                             <li><a href="contact.jsp">Contato</a></li>

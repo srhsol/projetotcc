@@ -15,42 +15,14 @@
     </div>
 </section>
 <!-- End banner Area -->
+<br>
+<h4>Busque pelo gênero, tipo ou idade!</h4>
 <form role="search" class="mt-10">
     <input type="text" name="filtro" placeholder="Search..." class="single-input-primary">
-    <!-- <a href="AnimalWS"><i class="fa fa-search"></i></a> -->
 </form>
-<div class="single-element-widget mt-30">
-    Tipo
-    <div class="default-select" id="default-select">
-        <select name="tipo">
-            <option value="Tipo">Tipo</option>
-            <option value="Gato">Gato</option>
-            <option value="Cachorro">Cachorro</option>
-        </select>
-    </div>
-</div>
-<div class="single-element-widget mt-30">
-    Idade
-    <div class="default-select" id="default-select">
-        <select name="idade">
-            <option value="Idade">Idade</option>
-            <option value="Filhote">Filhote</option>
-            <option value="Jovem">Jovem</option>
-            <option value="Adulto">Adulto</option>
-        </select>
-    </div>
-</div>
-<div class="single-element-widget mt-30">
-    Gênero
-    <div class="default-select" id="default-select">
-        <select name="genero">
-            <option value="Genero">Gênero</option>
-            <option value="Fêmea">Fêmea</option>
-            <option value="Macho">Macho</option>
-        </select>
-    </div>
-</div>
-<a href="AnimalWS" class="primary-btn text-uppercase">Filtrar</a>
+
+<a href="AnimalWS" class="primary-btn text-uppercase">Buscar</a>
+<a href="AnimalWS?acao=listAnimal" class="primary-btn text-uppercase">Todos</a>
 
 <div class="section-top-border">
     <div class="row gallery-item">

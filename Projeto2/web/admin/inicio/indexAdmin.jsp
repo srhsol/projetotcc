@@ -77,6 +77,16 @@
         </div>							
     </div>
 </div>
+<div class="container">
+    <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
+        <div class="col-lg-8 callto-top-left">
+            <h1>Listar voluntários</h1>
+        </div>
+        <div class="col-lg-4 callto-top-right">
+            <a href="../voluntario/VoluntarioWS?acao=list" class="primary-btn">Listar</a>
+        </div>							
+    </div>
+</div>
 <br>
 
 

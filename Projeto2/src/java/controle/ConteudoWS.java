@@ -7,9 +7,12 @@ package controle;
 
 import dao.ConteudoDAO;
 import dao.ConteudoDAO;
+import dao.VoluntarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,13 +21,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Conteudo;
 import modelo.Conteudo;
-import modelo.Conteudo;
+import modelo.Voluntario;
 
 /**
  *
  * @author Sarah Saraçol
  */
-@WebServlet(name = "ConteudoWS", urlPatterns = {"/public/ConteudoWS"})
+@WebServlet(name = "ConteudoWS", urlPatterns = {"/admin/conteudo/ConteudoWS"})
 public class ConteudoWS extends HttpServlet {
 
     private Conteudo obj;
@@ -42,14 +45,72 @@ public class ConteudoWS extends HttpServlet {
 
         switch (String.valueOf(acao)) {
             case "add":
-                pagina = "animal.jsp";
+                pagina = "conteudo.jsp";
+                break;
+            case "list":
+                dao = new ConteudoDAO();
+                if (request.getParameter("filtro") != null) {
+                    try {
+                        lista = dao.listar(request.getParameter("filtro"));
+                    } catch (Exception ex) {
+                        Logger.getLogger(ConteudoWS.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    lista = dao.listar();
+                }
+                //pra onde deve ser redirecionada a página
+                //passar a listagem para a página
+                request.setAttribute("lista", this.listaConteudo());
+                pagina = "../conteudo/conteudo-lista.jsp";
+                break;
+            case "del":
+                id = request.getParameter("id");
+                dao = new ConteudoDAO();
+                //pagina = "../admin/voluntario/voluntario-lista.jsp";
+                obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
+                Boolean deucerto = dao.excluir(obj);
+                if (deucerto) {
+                    lista = dao.listar();
+                    request.setAttribute("lista", lista);
+                    request.setAttribute("msg", "Excluído com sucesso");
+                } else {
+                    request.setAttribute("msg", "Erro ao excluir");
+                }
                 break;
             case "edit":
                 id = request.getParameter("id");
                 dao = new ConteudoDAO();
                 Conteudo obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
                 request.setAttribute("obj", obj);
-                pagina = "edita.jsp";
+                pagina = "../conteudo/edita.jsp";
+                break;
+            case "listConteudo":
+                request.setAttribute("conteudo", this.listaConteudo());
+
+                try {
+                    lista = this.listaConteudo();
+
+                } catch (Exception ex) {
+                    Logger.getLogger(ConteudoWS.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                request.setAttribute("lista", lista);
+                pagina = "../conteudo/conteudo-lista.jsp";
+                break;
+            default:
+                dao = new ConteudoDAO();
+                if (request.getParameter("filtro") != null) {
+                    try {
+                        lista = dao.listar(request.getParameter("filtro"));
+                    } catch (Exception ex) {
+                        Logger.getLogger(ConteudoWS.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    lista = dao.listar();
+                }
+                //pra onde deve ser redirecionada a página
+                pagina = "../conteudo/conteudo-lista.jsp";
+                //passar a listagem para a página
+                request.setAttribute("lista", lista);
                 break;
         }
         RequestDispatcher destino = request.getRequestDispatcher(pagina);
@@ -67,27 +128,40 @@ public class ConteudoWS extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String msg;
-
         Boolean deucerto;
-        //se veio com a chave primaria então tem q alterar
-        if (request.getParameter("txtId") != null) {
-            obj.setSobre(request.getParameter("sobre"));
-
-            deucerto = dao.alterar(obj);
-            pagina = "conteudo-ok.jsp";
-        } //adiciona
-        else {
-            obj.setSobre(request.getParameter("sobre"));
-            deucerto = dao.incluir(obj);
-            pagina = "conteudo-ok.jsp";
-        }
-        if (deucerto) {
-            msg = "Operação realizada com sucesso";
+        //verificar campos obrigatórios
+        if (request.getParameter("txtConteudo") == null) {
+            msg = "Campos obrigatórios não informados";
+            pagina = "../conteudo/conteudo.jsp";
         } else {
-            msg = "Erro ao realizar a operação";
+            dao = new ConteudoDAO();
+            obj = new Conteudo();
+            //preencho o objeto com o que vem do post
+            //Boolean deucerto;
+
+            //se veio com a chave primaria então tem q alterar
+            if (request.getParameter("txtId") != null) {
+                obj = dao.buscarPorChavePrimaria(Long.parseLong(request.getParameter("txtId")));
+                obj.setSobre(request.getParameter("txtConteudo"));
+                deucerto = dao.alterar(obj);
+                pagina = "../conteudo/edita.jsp";
+            } //adiciona
+            else {
+                obj.setSobre(request.getParameter("txtConteudo"));
+                deucerto = dao.incluir(obj);
+                request.setAttribute("msg", "Conteudo cadastrado!");
+                pagina = "../conteudo/conteudo.jsp";
+            }
+            if (deucerto) {
+                msg = "Operação realizada com sucesso";
+            } else {
+                msg = "Erro ao realizar a operação";
+            }
+            dao.fecharConexao();
         }
-        dao.fecharConexao();
+        
         request.setAttribute("msg", msg);
         RequestDispatcher destino = request.getRequestDispatcher(pagina);
         destino.forward(request, response);
@@ -102,5 +176,12 @@ public class ConteudoWS extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+        private List<Conteudo> listaConteudo() {
+        ConteudoDAO dao = new ConteudoDAO();
+        List<Conteudo> conteudos = dao.listar();
+        dao.fecharConexao();
+        return conteudos;
+    }
 
 }

@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="cabecalho.jsp" %>
+<meta charset="utf-8"/>
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
     <div class="container">
@@ -10,14 +11,12 @@
 
                 <h1 class="text-uppercase">
                     <br>
-
                 </h1>
                 <p class="text-white sub-head">
 
-                </p>
+                </p>    
                 <br>
                 <br>
-
                 <br>
                 <br>
                 <br>
@@ -38,35 +37,35 @@
 
         <div class="col-lg-8 callto-top-left">
             <div class="col-lg-8 col-md-8">
-                <h3 class="mb-30">Atualizar voluntário</h3>
+                <h3 class="mb-30">Cadastre-se!</h3>
 
                 <form action="VoluntarioWS" method="post" >
 
                     <div class="mt-10">
-                        <input type="text" name="txtId" placeholder="ID" value="${obj.id}" class="single-input-primary">
-                    </div>
-
-                    <div class="mt-10">
-                        <input type="text" name="txtNome" placeholder="Nome" value="${obj.nome}" class="single-input-primary">
+                        <input type="text" name="txtNome" placeholder="Nome" class="single-input-primary">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="txtEmail" placeholder="Email" value="${obj.email}" class="single-input-primary">
+                        <input type="text" name="txtEmail" placeholder="Email" class="single-input-primary">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="txtEndereco" placeholder="Endereço" value="${obj.endereco}" class="single-input-primary">
+                        <input type="text" name="txtEndereco" placeholder="Endereço" class="single-input-primary">
                     </div>
 
                     <br>
-                    <button class="btn btn-primary btn-round text-center" type="submit">
-                        <i class="tim-icons icon-cloud-upload-94"></i> Salvar
-                    </button>	
-                    <input type="button" class="primary-btn text-uppercase" value="Voltar" onClick="history.go(-1)">
-
+                    <button class="primary-btn text-uppercase">Cadastrar</button>
+                    <a href="../voluntario/VoluntarioWS?acao=list" class="primary-btn text-uppercase">Listar</a>
                 </form>
-                <br>
-                <h4>Listar todos</h4>
-                <br>
-                <a href="VoluntarioWS?acao=list" class="primary-btn text-uppercase">Voluntários</a>
+
+                <div class="card-footer">
+                    <c:if test = "${not empty msg}">
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            ${msg}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </div>
+                    </c:if>
+                </div>
 
 
             </div>

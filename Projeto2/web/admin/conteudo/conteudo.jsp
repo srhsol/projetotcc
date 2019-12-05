@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="cabecalho.jsp" %>
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
@@ -33,42 +32,31 @@
 <!-- Start callto-top Area -->
 <!-- CENTRALIZA O FORMULÁRIO -->
 <div class="container"> 
-
     <div class="row justify-content-between pt-20 pt-20 pb-20">
-
         <div class="col-lg-8 callto-top-left">
             <div class="col-lg-8 col-md-8">
-                <h3 class="mb-30">Atualizar voluntário</h3>
-
-                <form action="VoluntarioWS" method="post" >
-
+                <h3 class="mb-30">Cadastrar</h3>
+                
+                <form action="ConteudoWS" method="post">
                     <div class="mt-10">
-                        <input type="text" name="txtId" placeholder="ID" value="${obj.id}" class="single-input-primary">
-                    </div>
-
-                    <div class="mt-10">
-                        <input type="text" name="txtNome" placeholder="Nome" value="${obj.nome}" class="single-input-primary">
-                    </div>
-                    <div class="mt-10">
-                        <input type="text" name="txtEmail" placeholder="Email" value="${obj.email}" class="single-input-primary">
-                    </div>
-                    <div class="mt-10">
-                        <input type="text" name="txtEndereco" placeholder="Endereço" value="${obj.endereco}" class="single-input-primary">
+                        <textarea class="single-input-primary" name="txtConteudo" placeholder="Conteudo" ></textarea>
                     </div>
 
                     <br>
-                    <button class="btn btn-primary btn-round text-center" type="submit">
-                        <i class="tim-icons icon-cloud-upload-94"></i> Salvar
-                    </button>	
+                    <button class="primary-btn text-uppercase">Salvar</button>
                     <input type="button" class="primary-btn text-uppercase" value="Voltar" onClick="history.go(-1)">
-
                 </form>
-                <br>
-                <h4>Listar todos</h4>
-                <br>
-                <a href="VoluntarioWS?acao=list" class="primary-btn text-uppercase">Voluntários</a>
-
-
+                
+                <div class="card-footer">
+                    <c:if test = "${not empty msg}">
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            ${msg}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </div>
+                    </c:if>
+                </div>
             </div>
         </div>
 

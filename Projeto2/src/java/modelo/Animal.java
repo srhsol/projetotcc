@@ -23,8 +23,7 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "Animal.findAll", query = "SELECT a FROM Animal a"),
-    @NamedQuery(name = "Animal.findFilter", query = "SELECT a FROM Animal a WHERE a.nome like :filtro"),
-    //@NamedQuery(name = "Animal.findFilter", query = "SELECT a FROM Animal a WHERE a.idade like :filtro")
+    @NamedQuery(name = "Animal.findFilter", query = "SELECT a FROM Animal a WHERE a.nome like :filtro OR a.genero like :filtro OR a.tipo like :filtro OR a.idade like :filtro")
 })
 public class Animal implements Serializable {
 
@@ -41,7 +40,7 @@ public class Animal implements Serializable {
     private String idade;
     private String genero;
     private String tipo; //gato ou cachorro
-    
+    private Boolean adotado;
 
     public Long getId() {
         return id;
@@ -91,25 +90,6 @@ public class Animal implements Serializable {
         this.endFoto3 = endFoto3;
     }
     
-
-/*
-    public Idade getIdade() {
-        return idade;
-    }
-
-    public void setIdade(Idade idade) {
-        this.idade = idade;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-*/
-
     public String getIdade() {
         return idade;
     }
@@ -132,6 +112,14 @@ public class Animal implements Serializable {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public Boolean getAdotado() {
+        return adotado;
+    }
+
+    public void setAdotado(Boolean adotado) {
+        this.adotado = adotado;
     }
 
 }

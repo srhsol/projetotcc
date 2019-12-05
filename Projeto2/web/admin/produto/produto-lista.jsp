@@ -20,6 +20,10 @@
 
 
 <!-- Start home-about Area -->
+<form role="search" class="mt-10">
+    <input type="text" name="filtro" placeholder="Search..." class="single-input-primary">
+    <!-- <a href="AnimalWS"><i class="fa fa-search"></i></a> -->
+</form>
 <body>
     <div class="col-lg-8 home-about-right ">
         <h1>

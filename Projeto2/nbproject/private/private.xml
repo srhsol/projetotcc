@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/voluntario/voluntario.jsp</file>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/index.jsp</file>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/dogs.jsp</file>
-            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/controle/VoluntarioWS.java</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/admin/voluntario/voluntario.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/public/about.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/controle/ConteudoWS.java</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/admin/evento/evento.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/web/admin/conteudo/conteudo.jsp</file>
+            <file>file:/C:/Users/Sarah%20Saraçol/Documents/GitHub/projetotcc/Projeto2/src/java/modelo/Conteudo.java</file>
         </group>
     </open-files>
 </project-private>
