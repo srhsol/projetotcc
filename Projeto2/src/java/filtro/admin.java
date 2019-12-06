@@ -43,7 +43,7 @@ public class admin implements Filter {
         }else{
             chain.doFilter(request, response);
             //request.setAttribute("msg","Você não está logado no sistema!");
-            //W((HttpServletResponse)response).sendRedirect("../login/login.jsp");
+            //((HttpServletResponse)response).sendRedirect("../login/login.jsp");
         }        
     }
 

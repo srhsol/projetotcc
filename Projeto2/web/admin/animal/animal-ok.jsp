@@ -7,10 +7,10 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Sobre nós				
+                    Animais				
                 </h1>	
                 <p class="text-white link-nav"><a href="index.jsp">Início </a>  
-                    <span class="lnr lnr-arrow-right"></span>  <a href="about.html"> Sobre nós</a></p>
+                    <span class="lnr lnr-arrow-right"></span>  <a href="#"> Animais</a></p>
             </div>	
         </div>
     </div>
